@@ -6,11 +6,14 @@ import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } fro
 import {COLORS, SIZES, icons} from '../../constants';
 import useFetch from '../../hook/useFetch';
 
-const tabs = ["About", "Qualifications", "Responsibilities"]
+
 
 const JobDetails = () => {
+    
     const params = useSearchParams()
     const router = useRouter()
+
+    const tabs = ["About", "Qualifications", "Responsibilities"]
 
     const { data, isLoading, error, refetch } = useFetch('job-details', {
         job_id: params.id
@@ -31,7 +34,13 @@ const JobDetails = () => {
 
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
-    const onRefresh = () => {}
+
+    const onRefresh = useCallback(() => {
+        setRefreshing(true);
+        ref etch()
+        setRefreshing(false)
+    }, [])  
+
     const displayTabContent = () => {
         switch(activeTab){
             case 'Qualifications':

@@ -8,6 +8,27 @@
       "expo-router"
     ],
     "name": "job-app",
-    "slug": "job-app"
+    "slug": "job-app",
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "d38474ac-ff8b-4892-90f4-1f0d89a10bd1"
+      }
+    },
+    "owner": "dariyank",
+    "android": {
+      "package": "com.dariyank.jobapp"
+    },
+    "ios": {
+      "bundleIdentifier": "com.dariyank.jobapp"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d38474ac-ff8b-4892-90f4-1f0d89a10bd1"
+    }
   }
 }
